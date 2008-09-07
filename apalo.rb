@@ -1,5 +1,15 @@
 require 'rubygems'
+  
 module Apalo
+
+  require 'term/ansicolor'
+
+  class Color
+    class << self
+      include Term::ANSIColor
+    end
+  end
+
   class CombinedLog
 
     attr_reader :processed_lines, :errors
@@ -11,7 +21,8 @@ module Apalo
     end
 
     def analyze(analyzer)
-        regex = '^(([0-9]{1,3}\.){3}[0-9]{1,3}) (\w|-) (\w|-) +\[([/:0-9\+ a-zA-Z]+)\] "(.*?)" (\d{3}|-) (-|\d{1,20}) "(.*?)" "(.*?)"$'
+      invalid_lines = [] 
+      regex = '^(([0-9]{1,3}\.){3}[0-9]{1,3}) (\w|-) (\w|-) +\[([/:0-9\+ a-zA-Z]+)\] "(.*?)" (\d{3}|-) (-|\d{1,20}) "(.*?)" "(.*?)"$'
       begin
         require 'oniguruma'
         matcher = Oniguruma::ORegexp.new(regex) 
@@ -20,7 +31,6 @@ module Apalo
           "WARNING: oniguruma gem not installed. Log analysis will be much slower."
         matcher = /#{regex}/
       end
-      #re = /^(([0-9]{1,3}\.){3}[0-9]{1,3}) (-|\w) (-|w) +\[(.*?)\] "(.*?)" (\d{3}|-) (-|\d{1,20}) "(.*?)" "(.*?)"$/
       items = {}
       File.open(@logfile) do |f|
         f.each do |line|
@@ -35,38 +45,18 @@ module Apalo
             items[:rsize]       = $8
             items[:referer]    = $9
             items[:user_agent] = $10
-            #yield Logline.new(items)
             analyzer.do items
           else
-            STDERR.puts "WARNING: line does not match.\n#{line}"
+            invalid_lines << "WARNING: line #{@processed_lines} format is invalid.\n#{line}"
             @errors += 1
           end
         end
       end
+      return invalid_lines
     end
 
   end
 
-  #
-  # model
-  #
-  class Logline
-    def initialize(items)
-      @items = items
-    end
-    def method_missing(m)
-      @items[m.to_sym]
-    end
-
-    def to_s
-      @items.values.join(" ")
-    end
-  end
-
-
-  #
-  # Controller
-  #
   class BasicAnalyzer
 
     def initialize
@@ -75,6 +65,7 @@ module Apalo
       @hits_per_ip = {}
       @methods = {}
       @requested_files = {}
+      @hits_per_hour = {}
     end
 
     def do(line)
@@ -84,6 +75,7 @@ module Apalo
       else
         @user_agents[ua] = 1
       end
+
       rc = line[:rcode]
       if not @response_codes[rc].nil?
         @response_codes[rc] += 1
@@ -96,6 +88,13 @@ module Apalo
         @requested_files[req] += 1
       else
         @requested_files[req] = 1
+      end
+
+      addr = line[:ipaddr]
+      if @hits_per_ip[addr].nil?
+        @hits_per_ip[addr] = 1
+      else
+        @hits_per_ip[addr] += 1
       end
     end
 
@@ -110,20 +109,26 @@ module Apalo
 
   class BasicAnalyzerView
     def render(params)
-      puts "\n** TOP 10 User Agents" 
+      puts Color.bold("\n** TOP 10 User Agents")
       ua = params[:user_agents]
       find_top10(ua).each do |key,val|
         puts "#{val}: ".ljust(10, " ") + "#{key}"
       end
 
-      puts "\n** TOP 10 Response Codes"
+      puts Color.bold("\n** TOP 10 Response Codes **")
       rc = params[:response_codes]
       find_top10(rc).each do |key,val|
         puts "#{val}: ".ljust(10, " ") + "#{key}"
       end
       
-      puts "\n** TOP 10 Requested File"
+      puts Color.bold("\n** TOP 10 Requested File")
       rf = params[:requested_files]
+      find_top10(rf).each do |key,val|
+        puts "#{val}: ".ljust(10, " ") + "#{key}"
+      end
+      
+      puts Color.bold("\n** TOP 10 IP Addresses")
+      rf = params[:hits_per_ip]
       find_top10(rf).each do |key,val|
         puts "#{val}: ".ljust(10, " ") + "#{key}"
       end
@@ -141,15 +146,19 @@ module Apalo
 
   end
 
+
 end
 
 if $0.eql? __FILE__
   include Apalo
   cl = CombinedLog.new("logs/combined")
   ba = BasicAnalyzer.new
-  cl.analyze(ba)
+  tstart = Time.now
+  errors = cl.analyze(ba)
+  tend = Time.now - tstart
   ba.print(BasicAnalyzerView.new)
   puts
-  puts "Processed lines: #{cl.processed_lines}"
-  puts "Errors:          #{cl.errors}"
+  puts Color.bold("Processed lines: ") + "#{cl.processed_lines}"
+  puts Color.bold("Errors:          ") + "#{cl.errors}"
+  puts Color.bold("Analisys time:   ") + "#{tend} secs."
 end
