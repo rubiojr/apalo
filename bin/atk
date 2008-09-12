@@ -1,3 +1,31 @@
 #!/usr/bin/ruby
 require 'rubygems'
-require 'optiparse'
+require 'optiflag'
+require 'term/ansicolor'
+require 'apalotk'
+
+module Executable extend OptiFlagSet
+  flag 'logfile',   :description => 'Log file to analyze'
+  extended_help_flag "h","help","?"
+  and_process!
+end
+  
+
+class Color
+  class << self
+    include Term::ANSIColor
+  end
+end
+
+
+include ApaloTk
+cl = CombinedLog.new(ARGV.flags.logfile)
+ba = BasicAnalyzer.new
+tstart = Time.now
+errors = cl.analyze(ba)
+tend = Time.now - tstart
+ba.print(BasicAnalyzerView.new)
+puts
+puts Color.bold("Processed lines: ") + "#{cl.processed_lines}"
+puts Color.bold("Errors:          ") + "#{cl.errors}"
+puts Color.bold("Analisys time:   ") + "#{tend} secs."
