@@ -41,9 +41,9 @@ module ApaloTk
         end
 
         i = line[:time].index(':')
-        d = line[:time][0..i-1] 
+        day,month,year = line[:time][0..i-1].split("/")
         t = line[:time][i+1..-1].split[0]
-        time = Time.parse("#{d} #{t}").strftime('%Y-%m-%d %H (%A)')
+        time = Time.parse("#{year}-#{Time.parse(month).month}-#{day} #{t}").strftime('%Y-%m-%d %H (%A)')
         if @hits_per_hour[time].nil?
           @hits_per_hour[time] = 1
         else
