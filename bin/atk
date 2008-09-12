@@ -7,6 +7,7 @@ require 'apalotk'
 module Executable extend OptiFlagSet
   flag 'logfile',   :description => 'Log file to analyze'
   extended_help_flag "h","help","?"
+  optional_flag 'logformat',   :description => 'Log file format'
   and_process!
 end
   
@@ -19,7 +20,17 @@ end
 include ApaloTk::Core
 include ApaloTk::Analyzers
 # init the log parser
-cl = CombinedLog.new(ARGV.flags.logfile)
+cl = case ARGV.flags.logformat
+  when nil: CombinedLog.new(ARGV.flags.logfile)
+  when "combined": CombinedLog.new(ARGV.flags.logfile)
+  when "combinedv": CombinedLogVhost.new(ARGV.flags.logfile)
+  else nil
+end
+
+if cl.nil?
+  STDERR.puts "Invalid log format specified. Choose either combined or combinedv"
+  exit 1
+end
 
 #
 # Use the BasicAnalyzer
