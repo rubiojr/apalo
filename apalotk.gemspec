@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{apalotk}
-  s.version = "0.0.10"
+  s.version = "0.0.9"
 
   s.specification_version = 2 if s.respond_to? :specification_version=
 
@@ -24,6 +24,5 @@ Gem::Specification.new do |s|
   s.add_dependency(%q<ptools>, [">= 1.1.6"])
   s.add_dependency(%q<term-ansicolor>, [">= 1.0"])
   s.add_dependency(%q<optiflag>, [">= 0.6.5"])
-  s.add_dependency(%q<oniguruma>, [">= 1.0"])
   s.files = Dir["lib/**/*.rb"] #+ Dir["examples/*"]
 end
