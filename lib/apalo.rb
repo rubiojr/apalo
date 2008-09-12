@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'time'
   
 module Apalo
 
@@ -96,6 +97,16 @@ module Apalo
       else
         @hits_per_ip[addr] += 1
       end
+
+      i = line[:time].index(':')
+      d = line[:time][0..i-1] 
+      t = line[:time][i+1..-1].split[0]
+      time = Time.parse("#{d} #{t}").strftime('%Y-%m-%d %H (%A)')
+      if @hits_per_hour[time].nil?
+        @hits_per_hour[time] = 1
+      else
+        @hits_per_hour[time] += 1
+      end
     end
 
     def print(view)
@@ -103,8 +114,10 @@ module Apalo
                   :response_codes => @response_codes,
                   :hits_per_ip => @hits_per_ip,
                   :methods => @methods,
-                  :requested_files => @requested_files)
+                  :requested_files => @requested_files,
+                  :hits_per_hour => @hits_per_hour)
     end
+
   end
 
   class BasicAnalyzerView
@@ -132,6 +145,12 @@ module Apalo
       find_top10(rf).each do |key,val|
         puts "#{val}: ".ljust(10, " ") + "#{key}"
       end
+      
+      puts Color.bold("\n** TOP 10 Hours (Busiest)")
+      rf = params[:hits_per_hour]
+      find_top10(rf).each do |key,val|
+        puts "#{val}: ".ljust(10, " ") + "#{key}"
+      end
     end
 
     def find_top10(hash)
@@ -145,7 +164,6 @@ module Apalo
     end
 
   end
-
 
 end
 
