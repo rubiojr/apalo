@@ -1,15 +1,7 @@
 require 'rubygems'
 require 'time'
   
-module Apalo
-
-  require 'term/ansicolor'
-
-  class Color
-    class << self
-      include Term::ANSIColor
-    end
-  end
+module ApaloTk
 
   class CombinedLog
 
@@ -167,16 +159,3 @@ module Apalo
 
 end
 
-if $0.eql? __FILE__
-  include Apalo
-  cl = CombinedLog.new("logs/combined")
-  ba = BasicAnalyzer.new
-  tstart = Time.now
-  errors = cl.analyze(ba)
-  tend = Time.now - tstart
-  ba.print(BasicAnalyzerView.new)
-  puts
-  puts Color.bold("Processed lines: ") + "#{cl.processed_lines}"
-  puts Color.bold("Errors:          ") + "#{cl.errors}"
-  puts Color.bold("Analisys time:   ") + "#{tend} secs."
-end
