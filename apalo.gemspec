@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.add_dependency(%q<ptools>, [">= 1.1.6"])
   s.add_dependency(%q<term-ansicolor>, [">= 1.0"])
   s.add_dependency(%q<optiflag>, [">= 0.6.5"])
-  s.files = Dir["lib/apalotk.rb"] #+ Dir["examples/*"]
+  s.files = Dir["lib/**/*.rb"] #+ Dir["examples/*"]
 end
