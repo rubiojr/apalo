@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{apalotk}
-  s.version = "0.0.9"
+  s.version = "0.1"
 
   s.specification_version = 2 if s.respond_to? :specification_version=
 
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Library and utilities to analyse Apache logs}
   s.email = %q{sergio@rubio.name}
   s.executables = [ "atk" ]
-  s.extra_rdoc_files = ["README.txt"]
+  #s.extra_rdoc_files = ["README", "COPYING"]
   #s.has_rdoc = true
   s.homepage = %q{http://www.github.com/rubiojr/apalo}
   #s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Foo", "--main", "README"]
