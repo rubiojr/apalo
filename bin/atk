@@ -10,21 +10,29 @@ module Executable extend OptiFlagSet
   and_process!
 end
   
-
 class Color
   class << self
     include Term::ANSIColor
   end
 end
 
-
-include ApaloTk
+include ApaloTk::Core
+include ApaloTk::Analyzers
+# init the log parser
 cl = CombinedLog.new(ARGV.flags.logfile)
+
+#
+# Use the BasicAnalyzer
+# 
 ba = BasicAnalyzer.new
 tstart = Time.now
 errors = cl.analyze(ba)
 tend = Time.now - tstart
-ba.print(BasicAnalyzerView.new)
+ba.print(BasicAnalyzerSimpleView.new)
+
+#
+# Output some stats
+#
 puts
 puts Color.bold("Processed lines: ") + "#{cl.processed_lines}"
 puts Color.bold("Errors:          ") + "#{cl.errors}"
