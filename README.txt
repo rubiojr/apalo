@@ -1,32 +1,28 @@
 = apalotk
 
-* FIX (url)
+* http://github.com/rubiojr/apalo
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Apache Logs Toolkit
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* Early, buggy, mostly untested code
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  Library and tools to analyze Apache log files
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
-
-== INSTALL:
-
-* FIX (sudo gem install, anything else)
+* Installing from gem should pull all the requirementes
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2008 FIX
+Copyright (c) 2008 Sergio Rubio <sergio@rubio.name>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
