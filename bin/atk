@@ -3,9 +3,10 @@ require 'rubygems'
 require 'optiflag'
 require 'term/ansicolor'
 require 'apalotk'
+include ApaloTk::Core
+include ApaloTk::Analyzers
 
 module Executable extend OptiFlagSet
-  flag 'logfile',   :description => 'Log file to analyze'
   extended_help_flag "h","help","?"
   optional_flag 'logformat',   :description => 'Log file format'
   and_process!
@@ -17,13 +18,22 @@ class Color
   end
 end
 
-include ApaloTk::Core
-include ApaloTk::Analyzers
+def usage
+  STDERR.puts "Usage: #{File.basename($0)} <options> <logfile>"
+end
+
+logfile = ARGV.last
+if not File.exist?(logfile)
+  STDERR.puts "Invalid logfile"
+  usage
+  exit 1
+end
+
 # init the log parser
 cl = case ARGV.flags.logformat
-  when nil: CombinedLog.new(ARGV.flags.logfile)
-  when "combined": CombinedLog.new(ARGV.flags.logfile)
-  when "combinedv": CombinedLogVhost.new(ARGV.flags.logfile)
+  when nil: CombinedLog.new(logfile)
+  when "combined": CombinedLog.new(logfile)
+  when "combinedv": CombinedLogVhost.new(logfile)
   else nil
 end
 
