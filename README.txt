@@ -1,6 +1,8 @@
 = apalotk
 
-* http://github.com/rubiojr/apalo
+* http://apalo.netcorex.org (Project page)
+* http://github.com/rubiojr/apalo (Code)
+* http://rubiojr.lighthouseapp.com/projects/16913-apalo/overview (Bug tracker)
 
 == DESCRIPTION:
 

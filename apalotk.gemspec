@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{apalotk}
-  s.version = "0.0.11"
+  s.version = "0.0.12"
 
   s.specification_version = 2 if s.respond_to? :specification_version=
 
