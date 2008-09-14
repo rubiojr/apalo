@@ -8,6 +8,11 @@ include ApaloTk::Analyzers
 
 module Executable extend OptiFlagSet
   extended_help_flag "h","help","?"
+  optional_flag "filter", :description => "Exclude lines matching regex"
+  optional_flag "exclude" do 
+    description "Exclude hits requesting images"
+    value_in_set %w[images media]
+  end
   and_process!
 end
   
@@ -28,7 +33,25 @@ if logfile.nil? or not File.exist?(logfile)
   exit 1
 end
 
-log = Log.new(logfile)
+log = nil
+if ARGV.flags.filter
+  log = Log.new(logfile, ARGV.flags.filter)
+elsif ARGV.flags.exclude
+  r = nil
+  if ARGV.flags.exclude.eql? "images"
+    r = '\.(gif|jpg|png|bmp|ico) HTTP'
+  elsif ARGV.flags.exclude.eql? "media"
+    r = '\.(gif|jpg|png|bmp|js|css|ico) HTTP'
+  else
+    STDERR.puts "Exclude type not supported"
+    exit 1
+  end
+  log = Log.new(logfile, r)
+else
+  log = Log.new(logfile)
+end
+
+
 
 #
 # Use the BasicAnalyzer
@@ -44,5 +67,6 @@ ba.print(BasicAnalyzerSimpleView.new)
 #
 puts
 puts Color.bold("Processed lines: ") + "#{log.processed_lines}"
+puts Color.bold("Filtered lines: ") + "#{log.filtered_lines}"
 puts Color.bold("Errors:          ") + "#{log.errors}"
 puts Color.bold("Analisys time:   ") + "#{tend} secs."

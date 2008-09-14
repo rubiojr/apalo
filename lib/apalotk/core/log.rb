@@ -2,13 +2,24 @@ module ApaloTk
   module Core
     class Log
 
-      attr_reader :processed_lines, :errors
+      attr_reader :processed_lines, :errors, :filtered_lines
       
-      def initialize(logfile, filters={})
+      def initialize(logfile, filter = nil)
         @logfile = logfile 
         @processed_lines = 0
+        @filtered_lines = 0
         @errors = 0
         @parser = RegexLogParser.new
+        if filter
+          begin
+            require 'oniguruma'
+            @filter = Oniguruma::ORegexp.new(filter) 
+          rescue Exception => e
+            STDERR.puts \
+              "WARNING: oniguruma gem not installed. Log analysis will be much slower."
+            @filter  = /#{filter}/
+          end
+        end
       end
 
       def parser=(parser)
@@ -19,6 +30,10 @@ module ApaloTk
         invalid_lines = [] 
         File.open(@logfile) do |f|
           f.each do |line|
+            if not @filter.nil? and @filter.match(line)
+              @filtered_lines += 1
+              next
+            end
             @processed_lines += 1
             items = @parser.parse_line(line)
             if items.nil?
