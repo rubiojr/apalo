@@ -1,4 +1,4 @@
-= apalotk
+= Apalo Toolkit
 
 * http://apalo.netcorex.org (Project page)
 * http://github.com/rubiojr/apalo (Code)
@@ -8,13 +8,22 @@
 
 Apache Logs Toolkit
 
-== FEATURES/PROBLEMS:
+== FEATURES
+
+ * Analyzes apache log files (combined format and combined+vhost format)
+   presenting useful reports
+ * Modular, easily extended
+ * Multiple output formats (stdout, pdf, html, ...) [TODO]
+ * Multiple analyzers included (basic, ...) [TODO, only one ATM]
+
+== PROBLEMS
 
 * Early, buggy, mostly untested code
+* Some of the code is pretty lame and slow (Especialy analyzers)
 
 == SYNOPSIS:
 
-  Library and tools to analyze Apache log files
+* Library and tools to analyze Apache log files
 
 == REQUIREMENTS:
 
