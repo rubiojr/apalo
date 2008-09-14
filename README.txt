@@ -19,6 +19,10 @@ Apache Logs Toolkit
 == REQUIREMENTS:
 
 * Installing from gem should pull all the requirementes
+* Oniguruma Regexp Library is optional buy highly recommended. 
+  It's waaaay faster than the current regexp engine in ruby1.8.
+  Apalo performance is much better if oniguruma is present.
+
 
 == LICENSE:
 
