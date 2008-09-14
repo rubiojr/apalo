@@ -8,7 +8,6 @@ include ApaloTk::Analyzers
 
 module Executable extend OptiFlagSet
   extended_help_flag "h","help","?"
-  optional_flag 'logformat',   :description => 'Log file format'
   and_process!
 end
   
@@ -29,25 +28,14 @@ if logfile.nil? or not File.exist?(logfile)
   exit 1
 end
 
-# init the log parser
-cl = case ARGV.flags.logformat
-  when nil: CombinedLog.new(logfile)
-  when "combined": CombinedLog.new(logfile)
-  when "combinedv": CombinedLogVhost.new(logfile)
-  else nil
-end
-
-if cl.nil?
-  STDERR.puts "Invalid log format specified. Choose either combined or combinedv"
-  exit 1
-end
+log = Log.new(logfile)
 
 #
 # Use the BasicAnalyzer
 # 
 ba = BasicAnalyzer.new
 tstart = Time.now
-errors = cl.analyze(ba)
+errors = log.analyze(ba)
 tend = Time.now - tstart
 ba.print(BasicAnalyzerSimpleView.new)
 
@@ -55,6 +43,6 @@ ba.print(BasicAnalyzerSimpleView.new)
 # Output some stats
 #
 puts
-puts Color.bold("Processed lines: ") + "#{cl.processed_lines}"
-puts Color.bold("Errors:          ") + "#{cl.errors}"
+puts Color.bold("Processed lines: ") + "#{log.processed_lines}"
+puts Color.bold("Errors:          ") + "#{log.errors}"
 puts Color.bold("Analisys time:   ") + "#{tend} secs."

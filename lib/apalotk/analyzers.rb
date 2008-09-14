@@ -1,1 +1,3 @@
-require File.dirname(__FILE__) + '/analyzers/basic.rb'
+Dir[File.dirname(__FILE__) + '/analyzers/*.rb'].each do |f|
+  require f
+end

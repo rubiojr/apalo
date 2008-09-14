@@ -1,3 +1,3 @@
-require File.dirname(__FILE__) + '/core/log'
-require File.dirname(__FILE__) + '/core/combined_log'
-require File.dirname(__FILE__) + '/core/combined_log_vhost'
+Dir[File.dirname(__FILE__) + '/core/*.rb'].each do |f|
+  require f
+end
