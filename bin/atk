@@ -23,7 +23,7 @@ def usage
 end
 
 logfile = ARGV.last
-if not File.exist?(logfile)
+if logfile.nil? or not File.exist?(logfile)
   STDERR.puts "Invalid logfile"
   usage
   exit 1
