@@ -1,4 +1,4 @@
-module ApaloTk
+module Apalo
   module Analyzers
     class VHostStats
 

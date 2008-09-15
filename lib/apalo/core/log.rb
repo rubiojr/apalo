@@ -1,4 +1,4 @@
-module ApaloTk
+module Apalo
   module Core
     class Log
 

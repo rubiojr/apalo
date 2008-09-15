@@ -2,9 +2,9 @@
 require 'rubygems'
 require 'optiflag'
 require 'term/ansicolor'
-require 'apalotk'
-include ApaloTk::Core
-include ApaloTk::Analyzers
+require 'apalo'
+include Apalo::Core
+include Apalo::Analyzers
 
 module Executable extend OptiFlagSet
   extended_help_flag "h","help","?"
@@ -59,11 +59,11 @@ end
 #
 # Use the BasicAnalyzer
 # 
-analyzer = ApaloTk::Analyzers::Factory.create(ARGV.flags.analyzer || "basic")
+analyzer = Apalo::Analyzers::Factory.create(ARGV.flags.analyzer || "basic")
 tstart = Time.now
 errors = log.analyze(analyzer)
 tend = Time.now - tstart
-view = ApaloTk::Analyzers::Factory.create_console_view(ARGV.flags.analyzer || "basic")
+view = Apalo::Analyzers::Factory.create_console_view(ARGV.flags.analyzer || "basic")
 analyzer.print(view)
 
 #

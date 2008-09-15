@@ -12,7 +12,7 @@ task :mv_gem do
 end
 
 task :clean_gem do
-  `rm build/apalotk*.gem`
+  `rm build/apalo*.gem`
 end
 
 task :gem_install => [:gem] do
