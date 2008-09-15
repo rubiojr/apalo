@@ -30,11 +30,11 @@ module ApaloTk
         invalid_lines = [] 
         File.open(@logfile) do |f|
           f.each do |line|
+            @processed_lines += 1
             if not @filter.nil? and @filter.match(line)
               @filtered_lines += 1
               next
             end
-            @processed_lines += 1
             items = @parser.parse_line(line)
             if items.nil?
               @errors += 1
