@@ -32,6 +32,10 @@ Apache Logs Toolkit
   It's waaaay faster than the current regexp engine in ruby1.8.
   Apalo performance is much better if oniguruma is present.
 
+* 2 log formats supported ATM:
+  * LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+  * LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" [%V]" combinedv
+
 
 == LICENSE:
 
