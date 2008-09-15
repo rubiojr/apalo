@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = Gem::Requirement.new(">= 1.8.4")
   #s.rubyforge_project = %q{mongrel}
   #s.rubygems_version = %q{1.2}
-  s.test_files = Dir["test/test_*.rb"]
+  #s.test_files = Dir["test/test_*.rb"]
   s.add_dependency(%q<ptools>, [">= 1.1.6"])
   s.add_dependency(%q<term-ansicolor>, [">= 1.0"])
   s.add_dependency(%q<optiflag>, [">= 0.6.5"])
