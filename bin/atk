@@ -9,6 +9,9 @@ include ApaloTk::Analyzers
 module Executable extend OptiFlagSet
   extended_help_flag "h","help","?"
   optional_flag "filter", :description => "Exclude lines matching regex"
+  optional_flag "analyzer" do
+    description "Analyzer to Use"
+  end
   optional_flag "exclude" do 
     description "Exclude hits requesting images"
     value_in_set %w[images media]
@@ -56,11 +59,12 @@ end
 #
 # Use the BasicAnalyzer
 # 
-ba = BasicAnalyzer.new
+analyzer = ApaloTk::Analyzers::Factory.create(ARGV.flags.analyzer || "basic")
 tstart = Time.now
-errors = log.analyze(ba)
+errors = log.analyze(analyzer)
 tend = Time.now - tstart
-ba.print(BasicAnalyzerSimpleView.new)
+view = ApaloTk::Analyzers::Factory.create_console_view(ARGV.flags.analyzer || "basic")
+analyzer.print(view)
 
 #
 # Output some stats

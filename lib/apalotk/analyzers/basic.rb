@@ -1,6 +1,6 @@
 module ApaloTk
   module Analyzers
-    class BasicAnalyzer
+    class Basic
 
       def initialize
         @user_agents = {}
@@ -62,8 +62,18 @@ module ApaloTk
 
     end
 
-    class BasicAnalyzerSimpleView
-      def render(params)
+    class BasicPDFView
+      def render(params={})
+      end
+    end
+
+    class BasicWebView
+      def render(params={})
+      end
+    end
+
+    class BasicConsoleView
+      def render(params={})
         puts Color.bold("\n** TOP 10 User Agents")
         ua = params[:user_agents]
         find_top10(ua).each do |key,val|
@@ -104,6 +114,7 @@ module ApaloTk
         return \
           hash.find_all { |key,val| top10.include?(val) }.sort{ |a,b| a[1] <=> b[1] }
       end
+
 
     end
   end
