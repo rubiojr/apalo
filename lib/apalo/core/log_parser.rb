@@ -43,7 +43,7 @@ module Apalo
           puts e.message
           STDERR.puts \
             "WARNING: oniguruma gem not installed. Log analysis will be much slower."
-          @regex  = /#{r}/
+          @regex  = /#{logr}/
         end
         File.open(Apalo.logfile) do |f|
           f.each_line do |line|
