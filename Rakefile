@@ -19,3 +19,7 @@ Hoe.new('Apalo', Apalo::VERSION) do |p|
   p.extra_deps << ["cmdparse", ">= 0.6.5"]
 end
 
+task :publish_gem do
+  `scp pkg/*.gem root@slmirror.csic.es:/espejo/rubygems/gems/`
+  `ssh slmirror gem generate_index -d /espejo/rubygems/`
+end
