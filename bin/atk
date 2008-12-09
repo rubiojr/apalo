@@ -11,10 +11,7 @@ class String
   include Term::ANSIColor
 end
 
-APALO_VERSION = '0.0.100'
-
-  
-Apalo::Cli.init(APALO_VERSION)
+Apalo::Cli.init(Apalo::VERSION)
 tstart = Time.now
 Apalo::Cli.run
 tend = Time.now
