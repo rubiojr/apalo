@@ -11,7 +11,7 @@ class String
   include Term::ANSIColor
 end
 
-APALO_VERSION = '0.0.99'
+APALO_VERSION = '0.0.100'
 
   
 Apalo::Cli.init(APALO_VERSION)
