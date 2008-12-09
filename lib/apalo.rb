@@ -1,7 +1,6 @@
 require 'time'
 require File.dirname(__FILE__) + '/apalo/core'
 require File.dirname(__FILE__) + '/apalo/cli'
-require 'xmlsimple'
 
 module Apalo
   def self.logfile=(l)

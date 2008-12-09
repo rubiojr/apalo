@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{apalo}
-  s.version = "0.0.13"
+  s.version = "0.0.99"
 
   s.specification_version = 2 if s.respond_to? :specification_version=
 
