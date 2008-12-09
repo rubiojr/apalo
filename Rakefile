@@ -14,10 +14,8 @@ Hoe.new('Apalo', Apalo::VERSION) do |p|
   #p.changes = p.paragraphs_of('CHANGELOG', 0..1).join("\n\n")
   p.remote_rdoc_dir = '' # Release to root
   p.developer('Sergio Rubio', 'sergio@rubio.name')
-  p.extra_deps = [ 
-    "ptools >= 1.1.6",
-    "term-ansicolor >= 1.0",
-    "cmdparse >= 0.6.5"
-  ]
+  p.extra_deps << [ "ptools",">= 1.1.6" ]
+  p.extra_deps << ["term-ansicolor",">= 1.0"]
+  p.extra_deps << ["cmdparse", ">= 0.6.5"]
 end
 
