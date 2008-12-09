@@ -24,20 +24,20 @@ Gem::Specification.new do |s|
     s.specification_version = 2
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<ptools >= 1.1.6>, [">= 0"])
-      s.add_runtime_dependency(%q<term-ansicolor >= 1.0>, [">= 0"])
-      s.add_runtime_dependency(%q<cmdparse >= 0.6.5>, [">= 0"])
+      s.add_runtime_dependency(%q<ptools>, [">= 1.1.6"])
+      s.add_runtime_dependency(%q<term-ansicolor>, [">= 1.0"])
+      s.add_runtime_dependency(%q<cmdparse>, [">= 0.6.5"])
       s.add_development_dependency(%q<hoe>, [">= 1.8.2"])
     else
-      s.add_dependency(%q<ptools >= 1.1.6>, [">= 0"])
-      s.add_dependency(%q<term-ansicolor >= 1.0>, [">= 0"])
-      s.add_dependency(%q<cmdparse >= 0.6.5>, [">= 0"])
+      s.add_dependency(%q<ptools>, [">= 1.1.6"])
+      s.add_dependency(%q<term-ansicolor>, [">= 1.0"])
+      s.add_dependency(%q<cmdparse>, [">= 0.6.5"])
       s.add_dependency(%q<hoe>, [">= 1.8.2"])
     end
   else
-    s.add_dependency(%q<ptools >= 1.1.6>, [">= 0"])
-    s.add_dependency(%q<term-ansicolor >= 1.0>, [">= 0"])
-    s.add_dependency(%q<cmdparse >= 0.6.5>, [">= 0"])
+    s.add_dependency(%q<ptools>, [">= 1.1.6"])
+    s.add_dependency(%q<term-ansicolor>, [">= 1.0"])
+    s.add_dependency(%q<cmdparse>, [">= 0.6.5"])
     s.add_dependency(%q<hoe>, [">= 1.8.2"])
   end
 end
