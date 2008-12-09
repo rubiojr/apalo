@@ -1,76 +1,26 @@
 #!/usr/bin/ruby
+##!/opt/ruby1.9/bin/ruby
 require 'rubygems'
-require 'optiflag'
+require 'cmdparse'
 require 'term/ansicolor'
+require 'logger'
 require 'apalo'
 include Apalo::Core
-include Apalo::Analyzers
 
-module Executable extend OptiFlagSet
-  extended_help_flag "h","help","?"
-  optional_flag "filter", :description => "Exclude lines matching regex"
-  optional_flag "analyzer" do
-    description "Analyzer to Use"
-  end
-  optional_flag "exclude" do 
-    description "Exclude hits requesting images"
-    value_in_set %w[images media]
-  end
-  and_process!
+class String
+  include Term::ANSIColor
 end
+
+APALO_VERSION = '0.3.1'
+
   
-class Color
-  class << self
-    include Term::ANSIColor
-  end
-end
-
-def usage
-  STDERR.puts "Usage: #{File.basename($0)} <options> <logfile>"
-end
-
-logfile = ARGV.last
-if logfile.nil? or not File.exist?(logfile)
-  STDERR.puts "Invalid logfile"
-  usage
-  exit 1
-end
-
-log = nil
-if ARGV.flags.filter
-  log = Log.new(logfile, ARGV.flags.filter)
-elsif ARGV.flags.exclude
-  r = nil
-  if ARGV.flags.exclude.eql? "images"
-    r = '\.(gif|jpg|png|bmp|ico) HTTP'
-  elsif ARGV.flags.exclude.eql? "media"
-    r = '\.(gif|jpg|png|bmp|js|css|ico) HTTP'
-  else
-    STDERR.puts "Exclude type not supported"
-    exit 1
-  end
-  log = Log.new(logfile, r)
-else
-  log = Log.new(logfile)
-end
-
-
-
-#
-# Use the BasicAnalyzer
-# 
-analyzer = Apalo::Analyzers::Factory.create(ARGV.flags.analyzer || "basic")
+Apalo::Cli.init(APALO_VERSION)
 tstart = Time.now
-errors = log.analyze(analyzer)
-tend = Time.now - tstart
-view = Apalo::Analyzers::Factory.create_console_view(ARGV.flags.analyzer || "basic")
-analyzer.print(view)
+Apalo::Cli.run
+tend = Time.now
+lsize = File.size? Apalo.logfile
 
-#
-# Output some stats
-#
 puts
-puts Color.bold("Processed lines: ") + "#{log.processed_lines}"
-puts Color.bold("Filtered lines: ") + "#{log.filtered_lines}"
-puts Color.bold("Errors:          ") + "#{log.errors}"
-puts Color.bold("Analisys time:   ") + "#{tend} secs."
+puts "Time taken: ".ljust(20) + (tend - tstart).to_s + " seconds"
+puts "Analyzed log size: ".ljust(20) + lsize.to_s + " bytes"
+puts "Lines processed: ".ljust(20) + Apalo.parser.processed_lines.to_s

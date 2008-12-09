@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <user-agents>
 <user-agent>
 <ID>id_a_f_3</ID>
@@ -496,6 +495,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_a_f_291108_1</ID>
+<String>Akregator/1.2.9; librss/remnants</String>
+<Description>Akregator news feed reader for KDE</Description>
+<Type>B</Type>
+<Comment></Comment>
+<Link1>http://akregator.kde.org/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_a_f_37</ID>
 <String>Aladin/3.324</String>
 <Description>Aladin robot</Description>
@@ -521,6 +529,15 @@
 <Comment></Comment>
 <Link1>http://www.aleksika.com</Link1>
 <Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_a_f_291108_2</ID>
+<String>AlertInfo 2.0 (Powered by Newsbrain)</String>
+<Description>Alertinfo - French version of Feedreader 3.xx </Description>
+<Type>B</Type>
+<Comment></Comment>
+<Link1>http://www.feedreader.com/</Link1>
+<Link2>http://www.geste.fr/alertinfo/home.html</Link2>
 </user-agent>
 <user-agent>
 <ID>id_a_f_39</ID>
@@ -556,6 +573,15 @@
 <Type>D</Type>
 <Comment></Comment>
 <Link1>http://www.nearsoftware.com</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_a_f_011108_1</ID>
+<String>Allrati/1.1 (+)</String>
+<Description>Unknown robot from Allrati.com</Description>
+<Type>R</Type>
+<Comment>67.205.96.xxx/67.205.104.xx</Comment>
+<Link1>http://www.allrati.com/</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -1157,7 +1183,7 @@
 <String>Avant Browser (http://www.avantbrowser.com)</String>
 <Description>Avant Browser - IE based browser</Description>
 <Type>B</Type>
-<Comment>s. also Orca Browser</Comment>
+<Comment></Comment>
 <Link1>http://www.avantbrowser.com</Link1>
 <Link2></Link2>
 </user-agent>
@@ -1625,7 +1651,7 @@
 <String>Bloglines Title Fetch/1.0 (http://www.bloglines.com)</String>
 <Description>Bloglines article search</Description>
 <Type>R</Type>
-<Comment></Comment>
+<Comment>65.214.44.xx</Comment>
 <Link1>http://www.bloglines.com</Link1>
 <Link2></Link2>
 </user-agent>
@@ -1634,7 +1660,16 @@
 <String>Bloglines-Images/0.1 (http://www.bloglines.com)</String>
 <Description>Bloglines graphics crawler</Description>
 <Type>R</Type>
-<Comment></Comment>
+<Comment>65.214.44.xx</Comment>
+<Link1>http://www.bloglines.com</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_a_f_011108_2</ID>
+<String>Bloglines/3.1 (http://www.bloglines.com)</String>
+<Description>Bloglines news crawler</Description>
+<Type>R</Type>
+<Comment>65.214.44.xx</Comment>
 <Link1>http://www.bloglines.com</Link1>
 <Link2></Link2>
 </user-agent>
@@ -4920,7 +4955,7 @@
 <Description>Newsbrain Feedreader3</Description>
 <Type>B</Type>
 <Comment></Comment>
-<Link1>http://www.feedreader.com/features.php</Link1>
+<Link1>http://www.feedreader.com/</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -5221,6 +5256,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_a_f_021108_1</ID>
+<String>FnooleBot/2.5.2 (+http://www.fnoole.com/addurl.html)</String>
+<Description>Fnoole news crawler</Description>
+<Type>R</Type>
+<Comment>209.205.65.9x</Comment>
+<Link1>http://www.fnoole.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_a_f_372</ID>
 <String>FocusedSampler/1.0</String>
 <Description>IBM's Almaden Research robot</Description>
@@ -5281,6 +5325,15 @@
 <Type>R</Type>
 <Comment></Comment>
 <Link1>http://freefind.com</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_a_f_221008_2</ID>
+<String>Frelicbot/1.0 +http://www.frelic.com/</String>
+<Description>Frelics backlink checking bot (beta)</Description>
+<Type>C</Type>
+<Comment></Comment>
+<Link1>http://www.frelic.com/</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -6058,6 +6111,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_g_m_291108_3</ID>
+<String>Haier-T10C/1.0 iPanel/2.0 WAP2.0 (compatible; UP.Browser/6.2.2.4; UPG1; UP/4.0; Embedded)</String>
+<Description>Openwave Mobile Browser on Haier T10C mobile</Description>
+<Type>B</Type>
+<Comment></Comment>
+<Link1></Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_g_m_171105_5</ID>
 <String>HappyFunBot/1.1</String>
 <Description>Happy Fun Search robot</Description>
@@ -6289,6 +6351,15 @@
 <Type>R</Type>
 <Comment></Comment>
 <Link1>http://morfeo.centrum.cz/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_g_m_021108_2</ID>
+<String>HolmesBot (http://holmes.ge)</String>
+<Description>Holes search robot (Georgia)</Description>
+<Type>R</Type>
+<Comment>77.92.229.3x</Comment>
+<Link1>http://holmes.ge/</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -7291,6 +7362,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_new_061208_1</ID>
+<String>IOI/2.0 (ISC Open Index crawler; http://index.isc.org/; bot@index.isc.org)</String>
+<Description>Internet Open Index crawler using Nutch</Description>
+<Type>R</Type>
+<Comment>149.20.54.1xx</Comment>
+<Link1>http://index.isc.org/</Link1>
+<Link2>http://www.nutch.org</Link2>
+</user-agent>
+<user-agent>
 <ID>id_g_m_514</ID>
 <String>IP*Works! V5 HTTP/S Component - by /n software - www.nsoftware.com</String>
 <Description>IP*Works! HTTP Component</Description>
@@ -7815,6 +7895,15 @@
 <user-agent>
 <ID>id_g_m_250408_3</ID>
 <String>kalooga/kalooga-4.0-dev-datahouse (Kalooga; http://www.kalooga.com; info@kalooga.com)</String>
+<Description>Kalooga image crawler</Description>
+<Type>R</Type>
+<Comment>195.210.57.1xx</Comment>
+<Link1>http://www.kalooga.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_g_m_011108_3</ID>
+<String>kalooga/KaloogaBot (Kalooga; http://www.kalooga.com/info.html?page=crawler; crawler@kalooga.com)</String>
 <Description>Kalooga image crawler</Description>
 <Type>R</Type>
 <Comment>195.210.57.1xx</Comment>
@@ -8569,21 +8658,21 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_g_m_622</ID>
-<String>linkbot</String>
-<Description>Rpsoft 2000 Site-Crawler</Description>
-<Type>R</Type>
-<Comment></Comment>
-<Link1>http://www.rpsoft2000.com/rps-site-crawler.htm</Link1>
-<Link2></Link2>
-</user-agent>
-<user-agent>
 <ID>id_g_m_621</ID>
 <String>Linkbot</String>
 <Description>Linkbot Pro link checking software</Description>
 <Type>C</Type>
 <Comment></Comment>
 <Link1>http://www.watchfire.com</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_g_m_622</ID>
+<String>linkbot</String>
+<Description>Rpsoft 2000 Site-Crawler</Description>
+<Type>R</Type>
+<Comment></Comment>
+<Link1>http://www.rpsoft2000.com/rps-site-crawler.htm</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -8947,15 +9036,6 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_g_m_653</ID>
-<String>lwp-trivial/1.34</String>
-<Description>Search4free robot</Description>
-<Type>R</Type>
-<Comment></Comment>
-<Link1>http://www.search4free.com</Link1>
-<Link2></Link2>
-</user-agent>
-<user-agent>
 <ID>id_g_m_654</ID>
 <String>lwp-trivial/1.34</String>
 <Description>Search4free robot</Description>
@@ -8965,7 +9045,16 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_g_m_656</ID>
+<ID>id_g_m_653</ID>
+<String>lwp-trivial/1.34</String>
+<Description>Search4free robot</Description>
+<Type>R</Type>
+<Comment></Comment>
+<Link1>http://www.search4free.com</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_g_m_655</ID>
 <String>lwp-trivial/1.35</String>
 <Description>Expert HTML online source viewer</Description>
 <Type>B</Type>
@@ -8974,7 +9063,7 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_g_m_655</ID>
+<ID>id_g_m_656</ID>
 <String>lwp-trivial/1.35</String>
 <Description>Expert HTML online source viewer</Description>
 <Type>B</Type>
@@ -9532,18 +9621,18 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_g_m_703</ID>
+<ID>id_g_m_704</ID>
 <String>Microsoft Data Access Internet Publishing Provider Protocol Discovery</String>
-<Description>MS Office 2000 acting as WebDAV client</Description>
+<Description>Server probe for data access operations using MS Frontpage with OPTION header</Description>
 <Type>B C</Type>
 <Comment></Comment>
 <Link1></Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_g_m_704</ID>
+<ID>id_g_m_703</ID>
 <String>Microsoft Data Access Internet Publishing Provider Protocol Discovery</String>
-<Description>Server probe for data access operations using MS Frontpage with OPTION header</Description>
+<Description>MS Office 2000 acting as WebDAV client</Description>
 <Type>B C</Type>
 <Comment></Comment>
 <Link1></Link1>
@@ -11413,6 +11502,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_moz_290708_4</ID>
+<String>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; Google Wireless Transcoder;)</String>
+<Description>Google wireless transcoder (GWT) proxy for rewriting websites for mobiles</Description>
+<Type>P</Type>
+<Comment>209.85.136.xxx</Comment>
+<Link1>http://www.google.com/gwt/n</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_moz_150906_1</ID>
 <String>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; ODP entries t_st; http://tuezilla.de/t_st-odp-entries-agent.html)</String>
 <Description>T&#252;zilla (Germany) - ODP link checking using Robozilla</Description>
@@ -13249,6 +13347,15 @@
 <Link2>http://www.archive.org/</Link2>
 </user-agent>
 <user-agent>
+<ID>id_moz_221008_1</ID>
+<String>Mozilla/5.0 (compatible; WoW Lemmings Kathune/2.0;http://www.wowlemmings.com/kathune.html)</String>
+<Description>Kathune spider for World of Warcraft guild data. Used to power WoW Lemmings</Description>
+<Type>R</Type>
+<Comment>76.12.83.24x</Comment>
+<Link1>http://www.wowlemmings.com/kathune.html</Link1>
+<Link2>http://www.wowlemmings.com/</Link2>
+</user-agent>
+<user-agent>
 <ID>id_moz_260407_1</ID>
 <String>Mozilla/5.0 (compatible; XTbot/1.0v; +http://www.externaltest.com)</String>
 <Description>eXternalTest - Server and online services monitoring</Description>
@@ -13285,12 +13392,30 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_new_061208_2</ID>
+<String>Mozilla/5.0 (compatible; YesupBot/1.0; +http://www.yesup.net/bot.html)</String>
+<Description>Yesup Seo - Toronto SEO Service</Description>
+<Type>C</Type>
+<Comment>66.48.78.1xx</Comment>
+<Link1>http://yesupseo.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_moz_250107_1</ID>
 <String>Mozilla/5.0 (compatible; Yoono; http://www.yoono.com/)</String>
 <Description>Yoono - community based search (193.110.140.xxx / 194.0.179.[x]xx)</Description>
 <Type>R</Type>
 <Comment>s. also yoono/1.0 web-crawler - yoofind/yoofind ..</Comment>
 <Link1>http://www.yoono.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_new_061208_3</ID>
+<String>Mozilla/5.0 (compatible; YoudaoBot/1.0; http://www.youdao.com/help/webmaster/spider/; )</String>
+<Description>Youdao search (China) robot</Description>
+<Type>R</Type>
+<Comment>202.108.7.1xx</Comment>
+<Link1>http://www.youdao.com/</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -13304,12 +13429,12 @@
 </user-agent>
 <user-agent>
 <ID>id_moz_110408_1</ID>
-<String>Mozilla/5.0 (compatible; zermelo +http://www.powerset.com) [email:paul@page-store.com</String>
-<Description>crawl@powerset.com]</Description>
-<Type>Powerset Natural Language Search crawler (under development) using Heritrix via Amazon Web Services</Type>
-<Comment>R</Comment>
-<Link1>67.202.34.xxx</Link1>
-<Link2>http://www.powerset.com/</Link2>
+<String>Mozilla/5.0 (compatible; zermelo +http://www.powerset.com) [email:paul@page-store.com&#44;crawl@powerset.com]</String>
+<Description>Powerset Natural Language Search crawler (under development) using Heritrix via Amazon Web Services</Description>
+<Type>R</Type>
+<Comment>67.202.34.xxx</Comment>
+<Link1>http://www.powerset.com/</Link1>
+<Link2>http://www.amazon.com/gp/browse.html?node=3435361</Link2>
 </user-agent>
 <user-agent>
 <ID>id_moz_030606_1</ID>
@@ -13348,7 +13473,7 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_new_290708_1</ID>
+<ID>id_moz_290708_1</ID>
 <String>Mozilla/5.0 (Gecko/20070310 Mozshot/0.0.20070628; http://mozshot.nemui.org/)</String>
 <Description>MozShot - Technical demo to take screenshot of any URL</Description>
 <Type>B</Type>
@@ -13519,6 +13644,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_moz_171008_2</ID>
+<String>Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML&#44; like Gecko) Chrome/0.2.153.1 Safari/525.19</String>
+<Description>Google Chrome browser based on WebKit (Safari)</Description>
+<Type>B</Type>
+<Comment></Comment>
+<Link1>http://www.google.com/chrome</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_moz_170207_1</ID>
 <String>Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.5) Gecko/20060731 Firefox/1.5.0.5 Flock/0.7.4.1</String>
 <Description>Flock web browser built on Mozilla technologies</Description>
@@ -13534,6 +13668,15 @@
 <Type>D</Type>
 <Comment></Comment>
 <Link1>http://www.megaupload.com/manager/de/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_moz_171008_1</ID>
+<String>Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.1) Gecko/2008092215 Firefox/3.0.1 Orca/1.1 beta 3</String>
+<Description>Orca browser - based on Gecko</Description>
+<Type>B</Type>
+<Comment></Comment>
+<Link1>http://www.orcabrowser.com</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -14176,6 +14319,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_n_s_291108_4</ID>
+<String>Net-Seekr Bot/Net-Seekr Bot V1 (http://www.net-seekr.com)</String>
+<Description>Net Seekr search robot</Description>
+<Type>R</Type>
+<Comment>78.129.201.19x</Comment>
+<Link1>http://www.net-seekr.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_n_s_1029</ID>
 <String>NetAnts/1.2x</String>
 <Description>NetAnts download manager</Description>
@@ -14462,6 +14614,15 @@
 <Comment></Comment>
 <Link1>http://www.google.com/</Link1>
 <Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_n_s_290708_3</ID>
+<String>Nokia6300/2.0 (05.50) Profile/MIDP-2.0 Configuration/CLDC-1.1 (botmobi http://find.mobi/bot.html abuse@mtld.mobi)</String>
+<Description>Botmobi crawler for Find.mobi mobile search</Description>
+<Type>C</Type>
+<Comment></Comment>
+<Link1>http://find.mobi/bot.html</Link1>
+<Link2>http://find.mobi/</Link2>
 </user-agent>
 <user-agent>
 <ID>id_n_s_200108_3</ID>
@@ -15067,6 +15228,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_n_s_201008_1</ID>
+<String>Opera/9.60 (Windows NT 5.1; U; de) Presto/2.1.1</String>
+<Description>Opera browser 9.6x on WinXP (Presto = Operas rendering engine)</Description>
+<Type>B</Type>
+<Comment></Comment>
+<Link1>http://my.opera.com/ODIN/blog/a-look-under-the-hood-of-opera-9-6</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_n_s_1091</ID>
 <String>OpidooBOT (larbin2.6.3@unspecified.mail)</String>
 <Description>Opidoo Search Belgium robot (62.4.83.xxx)</Description>
@@ -15132,10 +15302,10 @@
 <user-agent>
 <ID>id_n_s_150206_1</ID>
 <String>Orca Browser (http://www.orcabrowser.com)</String>
-<Description>Avant Browser - IE based browser</Description>
+<Description>Orca browser - based on Gecko</Description>
 <Type>B</Type>
-<Comment>s. also Avant Browser </Comment>
-<Link1>http://www.avantbrowser.com</Link1>
+<Comment></Comment>
+<Link1>http://www.orcabrowser.com</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -16129,7 +16299,7 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_new_290708_2</ID>
+<ID>id_n_s_290708_2</ID>
 <String>RAYSPIDER/Nutch-0.9</String>
 <Description>Unknown spider from Raytheon Company - maybe Raytheon High Speed Guard proxy</Description>
 <Type>P</Type>
@@ -18298,20 +18468,20 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
-<ID>id_n_s_060106_1</ID>
-<String>Strategic Board Bot (+http://www.strategicboard.com)</String>
-<Description>Strategic Board blog &amp; news search robot</Description>
-<Type>R</Type>
-<Comment></Comment>
-<Link1>http://www.strategicboard.com/</Link1>
-<Link2></Link2>
-</user-agent>
-<user-agent>
 <ID>id_n_s_140906_2</ID>
 <String>Strategic Board Bot (+http://www.strategicboard.com)</String>
 <Description>Strategic Board blogs and news aggregator robot</Description>
 <Type>R</Type>
 <Comment>62.0.99.2xx</Comment>
+<Link1>http://www.strategicboard.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_n_s_060106_1</ID>
+<String>Strategic Board Bot (+http://www.strategicboard.com)</String>
+<Description>Strategic Board blog &amp; news search robot</Description>
+<Type>R</Type>
+<Comment></Comment>
 <Link1>http://www.strategicboard.com/</Link1>
 <Link2></Link2>
 </user-agent>
@@ -19369,6 +19539,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_t_z_011108_4</ID>
+<String>urlfan-bot/1.0; +http://www.urlfan.com/site/bot/350.html</String>
+<Description>://URLFAN news crawler</Description>
+<Type>R</Type>
+<Comment>70.165.48.16x</Comment>
+<Link1>http://www.urlfan.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_t_z_1407</ID>
 <String>URLGetFile</String>
 <Description>URLGetFile downloading tool</Description>
@@ -19731,6 +19910,15 @@
 <user-agent>
 <ID>id_t_z_231105_1</ID>
 <String>voyager/1.0</String>
+<Description>Kosmix health&#44; auto and travel search crawler (204.14.48.x / 38.113.234.xxx)</Description>
+<Type>R</Type>
+<Comment>s. also - cfetch/1.x - carleson/1.x</Comment>
+<Link1>http://www.kosmix.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_new_301108_3</ID>
+<String>voyager/2.0 (http://www.kosmix.com/html/crawler.html)</String>
 <Description>Kosmix health&#44; auto and travel search crawler (204.14.48.x / 38.113.234.xxx)</Description>
 <Type>R</Type>
 <Comment>s. also - cfetch/1.x - carleson/1.x</Comment>
@@ -21277,6 +21465,15 @@
 <Link2></Link2>
 </user-agent>
 <user-agent>
+<ID>id_new_301108_2</ID>
+<String>Yanga WorldSearch Bot v1.1/beta (http://www.yanga.co.uk/)</String>
+<Description>Yanga search robot by Gigabase (Russian Federation)</Description>
+<Type>R</Type>
+<Comment>91.205.124.x</Comment>
+<Link1>http://www.yanga.co.uk/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
 <ID>id_t_z_1532</ID>
 <String>yarienavoir.net/0.2</String>
 <Description>Yarienavoir search (Belgium) robot</Description>
@@ -21301,6 +21498,15 @@
 <Type>R</Type>
 <Comment>uses also a blank UA field</Comment>
 <Link1>http://www.1noon.com/</Link1>
+<Link2></Link2>
+</user-agent>
+<user-agent>
+<ID>id_new_301108_1</ID>
+<String>Yeti/1.0 (NHN Corp.; http://help.naver.com/robots/)</String>
+<Description>Naver search (Korea) robot</Description>
+<Type>R</Type>
+<Comment>61.247.222.xx</Comment>
+<Link1>http://www.naver.com/</Link1>
 <Link2></Link2>
 </user-agent>
 <user-agent>
@@ -21580,24 +21786,6 @@
 <Type>R</Type>
 <Comment></Comment>
 <Link1>http://www.wisenutbot.com/</Link1>
-<Link2></Link2>
-</user-agent>
-<user-agent>
-<ID>id_new_290708_3</ID>
-<String>Nokia6300/2.0 (05.50) Profile/MIDP-2.0 Configuration/CLDC-1.1 (botmobi http://find.mobi/bot.html abuse@mtld.mobi)</String>
-<Description>Botmobi crawler for Find.mobi mobile search</Description>
-<Type>C</Type>
-<Comment></Comment>
-<Link1>http://find.mobi/bot.html</Link1>
-<Link2>http://find.mobi/</Link2>
-</user-agent>
-<user-agent>
-<ID>id_new_290708_4</ID>
-<String>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; Google Wireless Transcoder;)</String>
-<Description>Google wireless transcoder (GWT) proxy for rewriting websites for mobiles</Description>
-<Type>P</Type>
-<Comment>209.85.136.xxx</Comment>
-<Link1>http://www.google.com/gwt/n</Link1>
 <Link2></Link2>
 </user-agent>
 </user-agents>
