@@ -5,7 +5,7 @@ require File.dirname(__FILE__) + '/apalo/cli'
 
 module Apalo
 
-  VERSION = '0.0.102'
+  VERSION = '0.0.103'
 
   def self.logfile=(l)
     @logfile = l

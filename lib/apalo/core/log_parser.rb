@@ -8,6 +8,7 @@ module Apalo
         @processed_lines = 0
         @filtered_lines = 0
         @errors = 0
+        @logline = LogLine.new
         if filter
           begin
             require 'oniguruma'
@@ -18,11 +19,7 @@ module Apalo
             @filter  = /#{filter}/
           end
         end
-      end
-
-      def each_line
         @regex = nil
-        @logline = LogLine.new
         r = [
         '(\d+\.\d+\.\d+\.\d+)',    # ip
         '(.*?)',                   # foo
@@ -45,6 +42,9 @@ module Apalo
             "WARNING: oniguruma gem not installed. Log analysis will be much slower."
           @regex  = /#{logr}/
         end
+      end
+
+      def each_line
         File.open(Apalo.logfile) do |f|
           if Apalo.logfile =~ /\.gz/
             handle = Zlib::GzipReader.new(f)
@@ -54,6 +54,7 @@ module Apalo
           handle.each_line do |line|
             @processed_lines += 1
             if @regex.match(line)
+              @logline.raw = line
               @logline.ipaddr      = $1
               @logline.ident       = $2
               @logline.userid      = $3
@@ -66,6 +67,8 @@ module Apalo
               @logline.vhost       = $10
               @logline.raw         = line
               yield @logline
+            else
+              Apalo.parsing_errors << line
             end
           end
         end
