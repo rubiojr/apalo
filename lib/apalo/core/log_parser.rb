@@ -46,7 +46,12 @@ module Apalo
           @regex  = /#{logr}/
         end
         File.open(Apalo.logfile) do |f|
-          f.each_line do |line|
+          if Apalo.logfile =~ /\.gz/
+            handle = Zlib::GzipReader.new(f)
+          else
+            handle = f
+          end
+          handle.each_line do |line|
             @processed_lines += 1
             if @regex.match(line)
               @logline.ipaddr      = $1
