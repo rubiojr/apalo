@@ -16,7 +16,7 @@ module Apalo
   end
 
   def self.parser
-    @parser ||= LogParser.new
+    @parser ||= Apalo::Core::LogParser.new
   end
 
   def self.parsing_errors
