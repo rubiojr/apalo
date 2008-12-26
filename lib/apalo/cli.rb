@@ -2,7 +2,7 @@ module Apalo
   module Cli
     def self.init(version)
       @cmd = CmdParse::CommandParser.new( true, true )
-      @cmd.program_name = "knocked"
+      @cmd.program_name = "apalo"
       @cmd.program_version = version.split('.')
       @cmd.options = CmdParse::OptionParserWrapper.new do |opt|
             opt.separator "Global options:"
