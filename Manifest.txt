@@ -16,3 +16,4 @@ lib/apalo/core.rb
 lib/apalo/core/log_line.rb
 lib/apalo/core/log_parser.rb
 lib/apalo/core/log_string.rb
+examples/simple.rb

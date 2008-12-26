@@ -1,16 +1,16 @@
 Gem::Specification.new do |s|
   s.name = %q{apalo}
-  s.version = "0.0.102"
+  s.version = "0.0.104"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sergio RubioSergio Rubio"]
-  s.date = %q{2008-12-09}
+  s.date = %q{2008-12-26}
   s.default_executable = %q{atk}
   s.description = %q{Library and utilities to analyse Apache logs}
   s.email = %q{sergio@rubio.namesergio@rubio.name}
   s.executables = ["atk"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
-  s.files = ["History.txt", "Manifest.txt", "README.txt", "Rakefile", "THANKS", "bin/atk", "lib/apalo.rb", "lib/apalo/cli.rb", "lib/apalo/cli/commands/basic.rb", "lib/apalo/cli/commands/hit_counter.rb", "lib/apalo/cli/commands/monthly_stats.rb", "lib/apalo/cli/commands/user_agents.rb", "lib/apalo/cli/commands/vhost_stats.rb", "lib/apalo/cli/commands/vhosts_overview.rb", "lib/apalo/core.rb", "lib/apalo/core/log_line.rb", "lib/apalo/core/log_parser.rb", "lib/apalo/core/log_string.rb"]
+  s.files = ["History.txt", "Manifest.txt", "README.txt", "Rakefile", "THANKS", "bin/atk", "lib/apalo.rb", "lib/apalo/cli.rb", "lib/apalo/cli/commands/basic.rb", "lib/apalo/cli/commands/hit_counter.rb", "lib/apalo/cli/commands/monthly_stats.rb", "lib/apalo/cli/commands/user_agents.rb", "lib/apalo/cli/commands/vhost_stats.rb", "lib/apalo/cli/commands/vhosts_overview.rb", "lib/apalo/core.rb", "lib/apalo/core/log_line.rb", "lib/apalo/core/log_parser.rb", "lib/apalo/core/log_string.rb", "examples/simple.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/rubiojr/apalo}
   s.rdoc_options = ["--main", "README.txt"]
